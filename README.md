@@ -1,3 +1,31 @@
+In this research, I have completed an incomplete project using its dataset and the data collected by the original authors to finalize the project.
+
+This project is a tool that can determine the remaining lifespan of your battery based on its usage pattern. It takes into account if you only partially charge and discharge the battery. The tool analyzes the discharge or charge curve of your battery’s current cycle, whether it is partially charged and discharged, and determines the cycle and capacity of the battery. Finally, it calculates the percentage of your battery’s remaining lifespan based on its capacity.
+
+Dataset Details
+
+The dataset for this project consists of binary files stored in MATLAB format, including information such as the charge and discharge times of the battery and other related data. The dataset is organized into two folders: Data and Test. The Data folder contains the files used for training and testing the MATLAB scripts and their construction. The Test folder is used to validate and ensure the correct functionality of the project.
+
+Software Dependencies
+
+This project utilizes Python version 3.6. The following packages have been used:
+	•	fastdtw
+	•	h5py
+	•	hdf5storage
+	•	matplotlib
+	•	numpy
+	•	pandas
+	•	scipy
+	•	tqdm
+
+Modules in the Provided Tool
+
+The tool includes the following modules:
+	•	Import_data
+	•	sort_data
+	•	Predict_capacity
+
+
 ## Data Cleaning Packages
 
 This packages are used to import the charge/discharge cycle infomation inside a Matlab file and load it into two dictionaries sorted by the number of cycle. 
