@@ -1,3 +1,8 @@
+## Contributors
+
+- [Shayan Rahimi](https://github.com/shawnerii) - Python programming and modeling
+- [Aida Sharbatdar](https://github.com/aidashr) - Dataset gathering, MATLAB script and research analysis
+
 In this research, we have completed an incomplete project using its dataset and the data collected by the original authors to finalize the project.
 
 This project is a tool that can determine the remaining lifespan of your battery based on its usage pattern. It takes into account if you only partially charge and discharge the battery. The tool analyzes the discharge or charge curve of your battery’s current cycle, whether it is partially charged and discharged, and determines the cycle and capacity of the battery. Finally, it calculates the percentage of your battery’s remaining lifespan based on its capacity.
