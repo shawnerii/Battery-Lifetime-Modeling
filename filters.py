@@ -72,3 +72,11 @@ def median_filter(data, window=5):
         end = min(len(data), i + window // 2 + 1)
         result.append(np.median(data[start:end]))
     return np.array(result)
+
+import numpy as np
+from scipy.signal import savgol_filter
+
+def savgol(data, window=11, polyorder=3):
+    if len(data) < window:
+        return data
+    return savgol_filter(data, window, polyorder)
