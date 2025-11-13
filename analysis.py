@@ -20,3 +20,14 @@ def estimate_eol(capacities, times, eol_threshold=0.8):
 
 def capacity_fade(initial, current):
     return ((initial - current) / initial) * 100
+
+import numpy as np
+
+def health_index(capacity, initial_capacity):
+    return (capacity / initial_capacity) * 100
+
+def degradation_rate(capacities, times):
+    if len(capacities) < 2:
+        return 0.0
+    coeff = np.polyfit(times, capacities, 1)
+    return coeff[0]
