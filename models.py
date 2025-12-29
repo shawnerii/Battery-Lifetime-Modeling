@@ -65,3 +65,23 @@ class LinearModel:
 
     def predict(self, t):
         return self.slope * t + self.intercept
+
+import numpy as np
+from scipy.optimize import curve_fit
+
+class ExponentialModel:
+    def __init__(self):
+        self.params = None
+
+    def _func(self, t, a, b, c):
+        return a * np.exp(b * t) + c
+
+    def fit(self, times, capacities):
+        try:
+            self.params, _ = curve_fit(self._func, times, capacities, p0=[1, -0.001, 0], maxfev=5000)
+        except Exception:
+            self.params = [1, -0.001, 0]
+        return self
+
+    def predict(self, t):
+        return self._func(t, *self.params)
