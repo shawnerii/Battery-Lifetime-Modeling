@@ -85,3 +85,20 @@ class ExponentialModel:
 
     def predict(self, t):
         return self._func(t, *self.params)
+
+import numpy as np
+from models import LinearModel, ExponentialModel
+
+class EnsembleModel:
+    def __init__(self):
+        self.models = [LinearModel(), ExponentialModel()]
+        self.weights = [0.5, 0.5]
+
+    def fit(self, times, capacities):
+        for m in self.models:
+            m.fit(times, capacities)
+        return self
+
+    def predict(self, t):
+        preds = [m.predict(t) for m in self.models]
+        return np.average(preds, weights=self.weights)
