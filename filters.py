@@ -103,3 +103,13 @@ def kalman_filter(data, process_noise=1e-5, measurement_noise=1e-2):
         P = (1 - K) * P
         estimates[i] = x
     return estimates
+
+import numpy as np
+
+def median_filter(data, window=5):
+    result = []
+    for i in range(len(data)):
+        start = max(0, i - window // 2)
+        end = min(len(data), i + window // 2 + 1)
+        result.append(np.median(data[start:end]))
+    return np.array(result)
